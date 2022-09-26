@@ -5,7 +5,16 @@ import pytest
 import lmp.util.cfg
 import lmp.util.tknzr
 import lmp.vars
-from lmp.tknzr import CharTknzr, WsTknzr
+from lmp.tknzr import BPETknzr, CharTknzr, WsTknzr
+
+
+@pytest.fixture
+def bpe_tknzr(exp_name: str, request, tknzr_file_path: None) -> CharTknzr:
+  """BPE tokenizer example."""
+  tknzr = BPETknzr()
+  tknzr.build_vocab(batch_txt=['a', 'b', 'c'])
+  lmp.util.tknzr.save(exp_name=exp_name, tknzr=tknzr)
+  return tknzr
 
 
 @pytest.fixture
