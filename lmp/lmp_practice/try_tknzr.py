@@ -59,15 +59,18 @@ uncased_tknzr.build_vocab(batch_txt = Dset)
 print(uncased_tknzr.tk2id)
 
 # %%
-dataset =  lmp.dset.WikiText2Dset()
+dataset =  lmp.dset.WikiText2Dset(
+
+)
+# %%
+# building vocabs requires running the subword merge algorithm in iterations
+# so the line takes longer to run
 bpetknzr = lmp.tknzr.BPETknzr()
 bpetknzr.build_vocab(batch_txt = dataset)
+
+
+#%%
 print(bpetknzr.enc('ABcDEf'))
 
-# %%
-from lmp.tknzr import BPETknzr
-tknzr = BPETknzr()
-assert tknzr.tknz('abc def') == ['abc<eow>', 'def<eow>']
-assert tknzr.dtknz(['abc<eow>', 'def<eow>']) == 'abc def'
 
-# %%
+
