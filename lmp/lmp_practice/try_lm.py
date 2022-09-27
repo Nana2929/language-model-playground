@@ -93,7 +93,7 @@ for id in range(10):
 # # %%
 
 # MUST TRAIN The model first
-# how to use gpu? 
+# how to use gpu?
 # python -m lmp.script.train_model Elman-Net \
 #   --batch_size 32 \
 #   --beta1 0.9 \
@@ -116,7 +116,7 @@ for id in range(10):
 #   --p_hid 0.1 \
 #   --stride 32 \
 #   --tknzr_exp_name ch_poem_tknzr \
-#   --total_step 100000 \
+#   --total_step 10000 \
 #   --ver train \
 #   --warmup_step 5000 \
 #   --weight_decay 0.0

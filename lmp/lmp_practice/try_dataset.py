@@ -1,3 +1,4 @@
+#%%
 import lmp
 import lmp.vars
 import random
@@ -20,3 +21,4 @@ print(f'dataset size: {len(demo_dataset)}') # 2500
 print('demo dataset sample:')
 rind = random.randint(0, len(demo_dataset))
 print(demo_dataset[rind])
+# %%
